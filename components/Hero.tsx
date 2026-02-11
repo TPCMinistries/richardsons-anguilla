@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown, ShieldCheck } from "lucide-react";
 import { SITE, TRUST_STATS } from "@/lib/constants";
@@ -11,10 +12,18 @@ export default function Hero() {
       id="home"
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy"
     >
-      {/* Layered gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy to-ocean-dark" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(26,107,138,0.3),_transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(232,131,26,0.1),_transparent_60%)]" />
+      {/* Background photo */}
+      <Image
+        src="/images/hero-bg.jpg"
+        alt="Anguilla beach"
+        fill
+        priority
+        className="object-cover"
+        sizes="100vw"
+      />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-navy/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/50 to-navy/80" />
 
       {/* Subtle wave pattern at bottom */}
       <div className="absolute right-0 bottom-0 left-0">

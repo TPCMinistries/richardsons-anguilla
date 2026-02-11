@@ -1,24 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Waves, Baby, Dumbbell, LifeBuoy, CalendarDays, Check, ArrowRight } from "lucide-react";
 import { SERVICES, SITE } from "@/lib/constants";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
 const ICONS: Record<string, React.ReactNode> = {
-  swimming: <Waves className="h-10 w-10 text-ocean" />,
-  childcare: <Baby className="h-10 w-10 text-ocean" />,
-  sports: <Dumbbell className="h-10 w-10 text-ocean" />,
-  "water-safety": <LifeBuoy className="h-10 w-10 text-ocean" />,
-  packages: <CalendarDays className="h-10 w-10 text-ocean" />,
-};
-
-const GRADIENTS: Record<string, string> = {
-  swimming: "from-ocean/10 to-ocean/5",
-  childcare: "from-orange/10 to-orange/5",
-  sports: "from-navy/10 to-navy/5",
-  "water-safety": "from-ocean/10 to-ocean/5",
-  packages: "from-orange/10 to-navy/5",
+  swimming: <Waves className="h-8 w-8 text-white" />,
+  childcare: <Baby className="h-8 w-8 text-white" />,
+  sports: <Dumbbell className="h-8 w-8 text-white" />,
+  "water-safety": <LifeBuoy className="h-8 w-8 text-white" />,
+  packages: <CalendarDays className="h-8 w-8 text-white" />,
 };
 
 export default function Services() {
@@ -83,13 +76,23 @@ function ServiceCard({ service }: { service: (typeof SERVICES)[number] }) {
       variants={fadeUp}
       className="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
     >
-      {/* Icon header */}
-      <div className={`relative flex h-48 items-center justify-center bg-gradient-to-br ${GRADIENTS[service.slug] || "from-ocean/10 to-ocean/5"}`}>
-        <div className="rounded-2xl bg-white/80 p-5 shadow-sm backdrop-blur-sm transition-transform group-hover:scale-110">
-          {ICONS[service.slug] || <Waves className="h-10 w-10 text-ocean" />}
+      {/* Photo header */}
+      <div className="relative h-52 overflow-hidden">
+        <Image
+          src={service.image}
+          alt={service.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 1024px) 100vw, 33vw"
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-navy/20 to-transparent" />
+        {/* Icon badge */}
+        <div className="absolute bottom-4 left-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm">
+          {ICONS[service.slug] || <Waves className="h-8 w-8 text-white" />}
         </div>
         {/* Price badge */}
-        <div className="absolute top-5 right-5 rounded-full bg-navy px-4 py-1.5 shadow-lg">
+        <div className="absolute top-5 right-5 rounded-full bg-navy/90 px-4 py-1.5 shadow-lg backdrop-blur-sm">
           <span className="text-sm font-bold text-white">{service.price}</span>
           {service.priceNote && (
             <span className="ml-1 text-xs text-white/60">{service.priceNote}</span>

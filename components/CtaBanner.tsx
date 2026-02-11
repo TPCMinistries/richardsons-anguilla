@@ -1,21 +1,22 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SITE } from "@/lib/constants";
 import { fadeUp } from "@/lib/animations";
 
 export default function CtaBanner() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-ocean-dark via-ocean to-ocean-dark py-20">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <pattern id="waves" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M0 20 Q10 10 20 20 Q30 30 40 20" fill="none" stroke="white" strokeWidth="0.5" />
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#waves)" />
-        </svg>
-      </div>
+    <section className="relative overflow-hidden py-20">
+      {/* Background photo */}
+      <Image
+        src="/images/cta-bg.jpg"
+        alt=""
+        fill
+        className="object-cover"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-ocean/80" />
 
       <motion.div
         initial="hidden"

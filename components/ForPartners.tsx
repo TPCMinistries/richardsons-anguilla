@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Building2, ShieldCheck, Handshake, ArrowRight } from "lucide-react";
 import { SITE, PARTNER_BENEFITS } from "@/lib/constants";
@@ -8,9 +9,15 @@ import { fadeUp, staggerContainer } from "@/lib/animations";
 export default function ForPartners() {
   return (
     <section id="partners" className="relative overflow-hidden bg-navy py-24 md:py-32">
-      {/* Background accents */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(232,131,26,0.08),_transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(26,107,138,0.15),_transparent_60%)]" />
+      {/* Background photo */}
+      <Image
+        src="/images/partners-bg.jpg"
+        alt=""
+        fill
+        className="object-cover"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-navy/85" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div

@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ShieldCheck, Award, Heart, CheckCircle } from "lucide-react";
+import { ShieldCheck, Award, CheckCircle } from "lucide-react";
 import { CREDENTIALS } from "@/lib/constants";
 import { fadeUp, slideInLeft, slideInRight, staggerContainer } from "@/lib/animations";
 
@@ -27,15 +28,13 @@ export default function About() {
           {/* Photo side */}
           <motion.div variants={slideInLeft} className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-cream">
-              {/* Replace with actual Deanna photo */}
-              <div className="flex h-full items-center justify-center">
-                <div className="text-center">
-                  <div className="mx-auto mb-4 flex h-36 w-36 items-center justify-center rounded-full bg-ocean/10">
-                    <Heart className="h-20 w-20 text-ocean/60" />
-                  </div>
-                  <p className="text-sm text-navy/40">Deanna&apos;s Photo</p>
-                </div>
-              </div>
+              <Image
+                src="/images/about.jpg"
+                alt="Anguilla's beautiful coastline"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
 
             {/* Floating accent card */}
