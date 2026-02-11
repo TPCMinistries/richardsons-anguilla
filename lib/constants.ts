@@ -6,8 +6,8 @@ export const SITE = {
   subtitle:
     "Private swim lessons, professional childcare, youth sports, and vacation packages — trusted by luxury resorts and families across the island.",
   // Replace with Deanna's real WhatsApp number (country code, no + or spaces)
-  whatsapp: "12645555555",
-  whatsappPartner: "12645555555",
+  whatsapp: "12645810337",
+  whatsappPartner: "12645810337",
   email: "info@richardsonsanguilla.com",
   location: "Anguilla, British West Indies",
 };
