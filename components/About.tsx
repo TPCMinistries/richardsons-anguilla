@@ -29,10 +29,10 @@ export default function About() {
           <motion.div variants={slideInLeft} className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-cream">
               <Image
-                src="/images/about.jpg"
-                alt="Anguilla's beautiful coastline"
+                src="/images/deanna.png"
+                alt="Deanna Richardson — Founder, Richardson's Anguilla Experience"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
