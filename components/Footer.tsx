@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MessageCircle, Heart } from "lucide-react";
 import { SITE, NAV_LINKS, SERVICES } from "@/lib/constants";
 
@@ -10,13 +11,14 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="mb-4 flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-orange">
-                <span className="text-sm font-bold text-white font-[family-name:var(--font-heading)]">R</span>
-              </div>
-              <span className="text-lg font-bold text-white font-[family-name:var(--font-heading)]">
-                Richardson&apos;s
-              </span>
+            <div className="mb-4">
+              <Image
+                src="/images/logo.jpg"
+                alt="Richardson's Anguilla Experience"
+                width={160}
+                height={80}
+                className="h-16 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-sm leading-relaxed text-white/40">
               Anguilla&apos;s premier children&apos;s experience provider.

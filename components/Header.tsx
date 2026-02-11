@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 
@@ -29,18 +30,19 @@ export default function Header() {
           : "bg-gradient-to-b from-black/40 to-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
         {/* Logo / Brand */}
         <a
           href="#home"
-          className="group flex items-center gap-3"
+          className="group flex items-center gap-2"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange transition-transform group-hover:scale-110">
-            <span className="text-lg font-bold text-white font-[family-name:var(--font-heading)]">R</span>
-          </div>
-          <span className="hidden text-lg font-bold text-white sm:block font-[family-name:var(--font-heading)]">
-            Richardson&apos;s
-          </span>
+          <Image
+            src="/images/logo.jpg"
+            alt="Richardson's Anguilla Experience"
+            width={40}
+            height={40}
+            className="h-10 w-auto brightness-0 invert transition-transform group-hover:scale-105"
+          />
         </a>
 
         {/* Desktop Nav */}
