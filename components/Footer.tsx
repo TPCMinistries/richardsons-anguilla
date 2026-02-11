@@ -19,8 +19,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm leading-relaxed text-white/40">
-              Professional children&apos;s services in Anguilla.
-              Certified, trusted, and loved by families.
+              Anguilla&apos;s premier children&apos;s experience provider.
+              Certified, trusted by luxury resorts, and loved by families.
             </p>
           </div>
 

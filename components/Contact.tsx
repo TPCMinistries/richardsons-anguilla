@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, MessageCircle, MapPin, Clock, CheckCircle2 } from "lucide-react";
-import { SITE, SERVICES } from "@/lib/constants";
+import { SITE, CONTACT_SERVICES } from "@/lib/constants";
 import { fadeUp, slideInLeft, slideInRight, staggerContainer } from "@/lib/animations";
 
 export default function Contact() {
@@ -27,11 +27,11 @@ export default function Contact() {
             Let&apos;s Connect
           </motion.p>
           <motion.h2 variants={fadeUp} className="mb-5 text-3xl font-bold text-white md:text-5xl">
-            Your Children Deserve the Best
+            Reserve Deanna Before You Arrive
           </motion.h2>
           <motion.p variants={fadeUp} className="mx-auto max-w-2xl text-lg text-white/50">
-            Whether you&apos;re planning your trip or already on the island, Deanna responds
-            quickly and is flexible with scheduling. Reach out — your kids will thank you.
+            Whether you&apos;re a family planning your trip, a villa concierge, or a resort
+            looking to partner — Deanna responds quickly and is flexible with scheduling.
           </motion.p>
         </motion.div>
 
@@ -160,29 +160,39 @@ export default function Contact() {
                       className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white transition-colors focus:border-orange focus:outline-none focus:ring-1 focus:ring-orange"
                     >
                       <option value="" className="bg-navy text-white">Select a service</option>
-                      {SERVICES.map((s) => (
-                        <option key={s.slug} value={s.title} className="bg-navy text-white">
-                          {s.title} — {s.price}
+                      {CONTACT_SERVICES.map((s) => (
+                        <option key={s} value={s} className="bg-navy text-white">
+                          {s}
                         </option>
                       ))}
-                      <option value="Multiple Services" className="bg-navy text-white">
-                        Multiple Services
-                      </option>
-                      <option value="Other" className="bg-navy text-white">Other / Question</option>
                     </select>
                   </div>
 
-                  <div>
-                    <label htmlFor="dates" className="mb-1.5 block text-sm font-medium text-white/70">
-                      Travel Dates <span className="text-white/30">(optional)</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="dates"
-                      name="dates"
-                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/25 transition-colors focus:border-orange focus:outline-none focus:ring-1 focus:ring-orange"
-                      placeholder="e.g. March 15–22"
-                    />
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <div>
+                      <label htmlFor="dates" className="mb-1.5 block text-sm font-medium text-white/70">
+                        Travel Dates <span className="text-white/30">(optional)</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="dates"
+                        name="dates"
+                        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/25 transition-colors focus:border-orange focus:outline-none focus:ring-1 focus:ring-orange"
+                        placeholder="e.g. March 15–22"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="children" className="mb-1.5 block text-sm font-medium text-white/70">
+                        Children &amp; Ages <span className="text-white/30">(optional)</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="children"
+                        name="children"
+                        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/25 transition-colors focus:border-orange focus:outline-none focus:ring-1 focus:ring-orange"
+                        placeholder="e.g. 2 kids, ages 4 & 7"
+                      />
+                    </div>
                   </div>
 
                   <div>
@@ -195,7 +205,7 @@ export default function Contact() {
                       rows={4}
                       required
                       className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/25 transition-colors focus:border-orange focus:outline-none focus:ring-1 focus:ring-orange"
-                      placeholder="Tell Deanna about your children's ages, what you're looking for, and any questions..."
+                      placeholder="Tell Deanna what you're looking for — services, schedule, any questions..."
                     />
                   </div>
 

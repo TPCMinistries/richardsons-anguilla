@@ -42,7 +42,7 @@ export default function Hero() {
         <motion.div variants={fadeUp} className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm">
           <ShieldCheck className="h-4 w-4 text-orange" />
           <span className="text-sm font-medium text-white/80">
-            StarGuard Elite Certified &middot; CPR & First Aid &middot; Background Verified
+            Trusted by Zemi Beach House &middot; StarGuard Elite Certified
           </span>
         </motion.div>
 
@@ -51,11 +51,10 @@ export default function Hero() {
           variants={fadeUp}
           className="mb-6 text-4xl leading-[1.1] font-bold tracking-tight text-white sm:text-5xl md:text-7xl"
         >
-          Where Every Child Is{" "}
+          Anguilla&apos;s Most Trusted Name in{" "}
           <span className="bg-gradient-to-r from-orange to-orange-light bg-clip-text text-transparent">
-            Safe
-          </span>{" "}
-          in the Water
+            Children&apos;s Care
+          </span>
         </motion.h1>
 
         {/* Subheading */}
@@ -72,19 +71,19 @@ export default function Hero() {
           className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
           <a
-            href={`https://wa.me/${SITE.whatsapp}?text=Hi!%20I'd%20like%20to%20book%20a%20session%20with%20Deanna.`}
+            href={`https://wa.me/${SITE.whatsapp}?text=Hi%20Deanna!%20I'm%20planning%20a%20trip%20to%20Anguilla%20and%20would%20love%20to%20book%20your%20services%20for%20my%20children.`}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange/25 transition-all hover:bg-orange-dark hover:shadow-2xl hover:shadow-orange/30"
           >
-            Book a Session
+            Book Before You Arrive
             <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
           </a>
           <a
-            href="#about"
+            href="#services"
             className="rounded-full border-2 border-white/20 px-8 py-4 text-lg font-semibold text-white transition-all hover:border-white/40 hover:bg-white/5"
           >
-            Meet Deanna
+            Explore Services
           </a>
         </motion.div>
 

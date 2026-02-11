@@ -25,11 +25,11 @@ export default function CtaBanner() {
         className="relative mx-auto max-w-4xl px-6 text-center"
       >
         <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
-          Planning a Trip to Anguilla?
+          Booking Your Anguilla Trip?
         </h2>
         <p className="mx-auto mb-8 max-w-2xl text-lg text-white/70">
-          Book Deanna before you arrive. Peak season fills up fast, and the families who plan ahead
-          get the best availability. Your children will have the time of their lives.
+          Reserve Deanna before you arrive. Peak season fills up fast, and the families who
+          plan ahead get the best availability. Your children will have the time of their lives.
         </p>
         <a
           href={`https://wa.me/${SITE.whatsapp}?text=Hi%20Deanna!%20I'm%20planning%20a%20trip%20to%20Anguilla%20and%20would%20love%20to%20book%20your%20services.`}
@@ -37,7 +37,7 @@ export default function CtaBanner() {
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-semibold text-ocean shadow-xl transition-all hover:shadow-2xl hover:bg-cream"
         >
-          Book Ahead on WhatsApp
+          Reserve Your Dates on WhatsApp
           <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
         </a>
       </motion.div>

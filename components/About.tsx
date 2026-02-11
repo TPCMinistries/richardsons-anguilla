@@ -59,21 +59,26 @@ export default function About() {
 
             <div className="space-y-5 text-lg leading-relaxed text-navy/60">
               <p>
-                When families arrive in Anguilla, they come for the beaches. When they come{" "}
-                <em>back</em>, many of them come for Deanna.
+                Deanna Richardson is the children&apos;s services professional that
+                Anguilla&apos;s top resorts trust with their most important guests —
+                families.
               </p>
               <p>
-                A certified swim instructor and StarGuard Elite lifeguard, Deanna has spent over
-                eight years building a reputation that spreads by word of mouth across the island
-                and beyond. She&apos;s the person concierges recommend, the name parents pass to
-                friends, and the reason visiting families can actually relax.
+                Currently partnered with{" "}
+                <strong className="text-navy/80">Zemi Beach House</strong> (Hilton LXR)
+                for swim lessons and kids&apos; club programming, and with{" "}
+                <strong className="text-navy/80">Learn to Swim Anguilla</strong> for
+                island-wide water safety, Deanna has spent over eight years building the
+                kind of reputation that luxury hospitality demands: impeccable credentials,
+                warm professionalism, and the rare ability to make every child feel safe,
+                capable, and genuinely cared for.
               </p>
               <p>
-                Her approach is simple: every child deserves to feel safe, capable, and cared for.
-                Whether she&apos;s teaching a nervous three-year-old to trust the water, coaching
-                teenagers on the football pitch, or keeping little ones engaged while their parents
-                enjoy a quiet dinner — Deanna brings the same combination of professional skill and
-                genuine warmth to every single interaction.
+                She launched Richardson&apos;s Anguilla Experience because demand outgrew
+                any single resort. Today, she serves families directly, partners with
+                hotels and villa companies, and leads community water safety programs — all
+                with the same standard of care that made her Anguilla&apos;s most
+                recommended name in children&apos;s services.
               </p>
             </div>
 
