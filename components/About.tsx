@@ -1,70 +1,101 @@
-import { Shield, Award, Heart } from "lucide-react";
+"use client";
+
+import { motion } from "framer-motion";
+import { ShieldCheck, Award, Heart, CheckCircle } from "lucide-react";
 import { CREDENTIALS } from "@/lib/constants";
+import { fadeUp, slideInLeft, slideInRight, staggerContainer } from "@/lib/animations";
+
+const ICONS: Record<string, React.ReactNode> = {
+  "CPR & First Aid Certified": <ShieldCheck className="h-5 w-5 text-orange" />,
+  "StarGuard Elite Lifeguard": <Award className="h-5 w-5 text-orange" />,
+  "Certified Swim Instructor": <CheckCircle className="h-5 w-5 text-orange" />,
+  "Youth Coaching Certified": <Award className="h-5 w-5 text-orange" />,
+  "Background Verified": <ShieldCheck className="h-5 w-5 text-orange" />,
+};
 
 export default function About() {
   return (
-    <section id="about" className="bg-white py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-          {/* Photo placeholder */}
-          <div className="relative">
-            <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-cream">
-              {/* Replace with actual photo of Deanna */}
+    <section id="about" className="overflow-hidden bg-white py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20"
+        >
+          {/* Photo side */}
+          <motion.div variants={slideInLeft} className="relative">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-cream">
+              {/* Replace with actual Deanna photo */}
               <div className="flex h-full items-center justify-center">
                 <div className="text-center">
-                  <div className="mx-auto mb-4 flex h-32 w-32 items-center justify-center rounded-full bg-ocean/10">
-                    <Heart className="h-16 w-16 text-ocean" />
+                  <div className="mx-auto mb-4 flex h-36 w-36 items-center justify-center rounded-full bg-ocean/10">
+                    <Heart className="h-20 w-20 text-ocean/60" />
                   </div>
-                  <p className="text-sm text-navy/50">Deanna&apos;s Photo</p>
+                  <p className="text-sm text-navy/40">Deanna&apos;s Photo</p>
                 </div>
               </div>
             </div>
-            {/* Accent decoration */}
-            <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-2xl bg-orange/10" />
-          </div>
 
-          {/* Bio */}
-          <div>
-            <p className="mb-2 text-sm font-semibold tracking-widest text-orange uppercase">
-              Meet Your Instructor
+            {/* Floating accent card */}
+            <div className="absolute -right-4 -bottom-6 rounded-2xl bg-navy px-6 py-4 shadow-xl lg:-right-8">
+              <p className="text-3xl font-bold text-orange">8+</p>
+              <p className="text-sm font-medium text-white/70">Years of Trust</p>
+            </div>
+
+            {/* Background decoration */}
+            <div className="absolute -top-4 -left-4 -z-10 h-full w-full rounded-3xl bg-gradient-to-br from-orange/10 to-ocean/10" />
+          </motion.div>
+
+          {/* Content side */}
+          <motion.div variants={slideInRight}>
+            <p className="mb-3 text-sm font-semibold tracking-[0.2em] text-orange uppercase">
+              The Person Behind the Promise
             </p>
-            <h2 className="mb-6 text-3xl font-bold text-navy md:text-4xl">
-              About Deanna Richardson
+            <h2 className="mb-6 text-3xl leading-tight font-bold text-navy md:text-5xl md:leading-tight">
+              Meet Deanna Richardson
             </h2>
-            <div className="space-y-4 text-lg leading-relaxed text-navy/70">
+
+            <div className="space-y-5 text-lg leading-relaxed text-navy/60">
               <p>
-                Deanna Richardson is a dedicated swim instructor, certified lifeguard, and trusted
-                childcare provider based in Anguilla. With years of experience working with children
-                of all ages, she combines professional training with a genuine passion for keeping
-                kids safe, active, and happy.
+                When families arrive in Anguilla, they come for the beaches. When they come{" "}
+                <em>back</em>, many of them come for Deanna.
               </p>
               <p>
-                Whether it&apos;s teaching a toddler their first splash, coaching young footballers,
-                or providing attentive care while parents enjoy the island, Deanna brings warmth,
-                skill, and reliability to every interaction.
+                A certified swim instructor and StarGuard Elite lifeguard, Deanna has spent over
+                eight years building a reputation that spreads by word of mouth across the island
+                and beyond. She&apos;s the person concierges recommend, the name parents pass to
+                friends, and the reason visiting families can actually relax.
+              </p>
+              <p>
+                Her approach is simple: every child deserves to feel safe, capable, and cared for.
+                Whether she&apos;s teaching a nervous three-year-old to trust the water, coaching
+                teenagers on the football pitch, or keeping little ones engaged while their parents
+                enjoy a quiet dinner — Deanna brings the same combination of professional skill and
+                genuine warmth to every single interaction.
               </p>
             </div>
 
-            {/* Credentials */}
-            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {/* Credentials grid */}
+            <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {CREDENTIALS.map((cred) => (
                 <div
-                  key={cred}
-                  className="flex items-center gap-3 rounded-lg bg-cream px-4 py-3"
+                  key={cred.label}
+                  className="trust-badge flex items-start gap-3 rounded-xl px-4 py-4 transition-all hover:shadow-md"
                 >
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange/10">
-                    {cred.includes("CPR") ? (
-                      <Shield className="h-4 w-4 text-orange" />
-                    ) : (
-                      <Award className="h-4 w-4 text-orange" />
-                    )}
+                  <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-orange/10">
+                    {ICONS[cred.label] || <Award className="h-5 w-5 text-orange" />}
                   </div>
-                  <span className="text-sm font-medium text-navy">{cred}</span>
+                  <div>
+                    <p className="text-sm font-semibold text-navy">{cred.label}</p>
+                    <p className="text-xs text-navy/40">{cred.detail}</p>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

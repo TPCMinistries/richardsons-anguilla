@@ -1,62 +1,120 @@
-import { SITE } from "@/lib/constants";
+"use client";
+
+import { motion } from "framer-motion";
+import { ChevronDown, ShieldCheck } from "lucide-react";
+import { SITE, TRUST_STATS } from "@/lib/constants";
+import { fadeUp, staggerContainer } from "@/lib/animations";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-navy"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy"
     >
-      {/* Background gradient — replace with actual hero image */}
-      <div className="absolute inset-0 bg-gradient-to-br from-navy via-ocean to-navy opacity-90" />
+      {/* Layered gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-dark via-navy to-ocean-dark" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(26,107,138,0.3),_transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(232,131,26,0.1),_transparent_60%)]" />
 
-      {/* Decorative wave overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <svg
-          className="absolute bottom-0 w-full"
-          viewBox="0 0 1440 320"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+      {/* Subtle wave pattern at bottom */}
+      <div className="absolute right-0 bottom-0 left-0">
+        <svg viewBox="0 0 1440 120" fill="none" className="w-full">
           <path
-            d="M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,234.7C672,245,768,235,864,208C960,181,1056,139,1152,128C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,70 L1440,120 L0,120Z"
             fill="white"
+            fillOpacity="0.05"
+          />
+          <path
+            d="M0,80 C360,30 720,100 1080,50 C1260,30 1380,60 1440,50 L1440,120 L0,120Z"
+            fill="white"
+            fillOpacity="0.03"
           />
         </svg>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        {/* Logo placeholder */}
-        <div className="mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
-          <span className="text-3xl font-bold text-orange font-[family-name:var(--font-heading)]">
-            R
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+        className="relative z-10 mx-auto max-w-5xl px-6 pt-20 pb-12 text-center"
+      >
+        {/* Trust badge */}
+        <motion.div variants={fadeUp} className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm">
+          <ShieldCheck className="h-4 w-4 text-orange" />
+          <span className="text-sm font-medium text-white/80">
+            StarGuard Elite Certified &middot; CPR & First Aid &middot; Background Verified
           </span>
-        </div>
+        </motion.div>
 
-        <h1 className="mb-6 text-4xl leading-tight font-bold text-white md:text-6xl md:leading-tight">
-          {SITE.tagline}
-        </h1>
+        {/* Headline */}
+        <motion.h1
+          variants={fadeUp}
+          className="mb-6 text-4xl leading-[1.1] font-bold tracking-tight text-white sm:text-5xl md:text-7xl"
+        >
+          Where Every Child Is{" "}
+          <span className="bg-gradient-to-r from-orange to-orange-light bg-clip-text text-transparent">
+            Safe
+          </span>{" "}
+          in the Water
+        </motion.h1>
 
-        <p className="mx-auto mb-10 max-w-2xl text-lg text-white/80 md:text-xl">
+        {/* Subheading */}
+        <motion.p
+          variants={fadeUp}
+          className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/60 md:text-xl"
+        >
           {SITE.subtitle}
-        </p>
+        </motion.p>
 
-        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        {/* CTAs */}
+        <motion.div
+          variants={fadeUp}
+          className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+        >
           <a
-            href={`https://wa.me/${SITE.whatsapp}?text=Hi!%20I'm%20interested%20in%20booking%20a%20session.`}
+            href={`https://wa.me/${SITE.whatsapp}?text=Hi!%20I'd%20like%20to%20book%20a%20session%20with%20Deanna.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-orange px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-orange-dark hover:shadow-lg"
+            className="group inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange/25 transition-all hover:bg-orange-dark hover:shadow-2xl hover:shadow-orange/30"
           >
             Book a Session
+            <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
           </a>
           <a
-            href="#services"
-            className="rounded-full border-2 border-white/30 px-8 py-4 text-lg font-semibold text-white transition-all hover:border-white hover:bg-white/10"
+            href="#about"
+            className="rounded-full border-2 border-white/20 px-8 py-4 text-lg font-semibold text-white transition-all hover:border-white/40 hover:bg-white/5"
           >
-            View Services
+            Meet Deanna
           </a>
-        </div>
-      </div>
+        </motion.div>
+
+        {/* Trust Stats */}
+        <motion.div
+          variants={fadeUp}
+          className="mx-auto mt-16 grid max-w-2xl grid-cols-2 gap-4 sm:grid-cols-4"
+        >
+          {TRUST_STATS.map((stat) => (
+            <div key={stat.label} className="rounded-xl border border-white/10 bg-white/5 px-4 py-5 backdrop-blur-sm">
+              <p className="text-2xl font-bold text-orange md:text-3xl">{stat.value}</p>
+              <p className="mt-1 text-xs font-medium tracking-wide text-white/50 uppercase">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.a
+        href="#about"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-8 z-10 animate-bounce text-white/30 transition-colors hover:text-white/60"
+        aria-label="Scroll down"
+      >
+        <ChevronDown className="h-6 w-6" />
+      </motion.a>
     </section>
   );
 }

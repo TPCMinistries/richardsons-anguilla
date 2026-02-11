@@ -3,11 +3,16 @@
 @theme inline {
   --color-navy: #0F2B46;
   --color-navy-light: #163a5c;
+  --color-navy-dark: #0a1e33;
   --color-orange: #E8831A;
   --color-orange-dark: #d0720f;
+  --color-orange-light: #f09a3e;
   --color-cream: #FFF8F0;
+  --color-cream-dark: #f5ebe0;
   --color-ocean: #1A6B8A;
   --color-ocean-light: #2080a4;
+  --color-ocean-dark: #145570;
+  --color-sand: #F5E6D3;
   --font-heading: var(--font-playfair);
   --font-body: var(--font-inter);
 }
@@ -20,6 +25,7 @@ body {
   font-family: var(--font-body), system-ui, sans-serif;
   color: #1a1a1a;
   background: #ffffff;
+  overflow-x: hidden;
 }
 
 h1,
@@ -32,4 +38,16 @@ h4 {
 /* Smooth scroll offset for fixed header */
 section[id] {
   scroll-margin-top: 80px;
+}
+
+/* Custom selection color */
+::selection {
+  background: #E8831A33;
+  color: #0F2B46;
+}
+
+/* Subtle gradient border for trust badges */
+.trust-badge {
+  background: linear-gradient(135deg, #FFF8F0, #ffffff);
+  border: 1px solid #E8831A20;
 }

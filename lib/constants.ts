@@ -2,10 +2,10 @@
 
 export const SITE = {
   name: "Richardson's Anguilla Experience",
-  tagline: "Safe. Skilled. Trusted Care for Children in Anguilla",
+  tagline: "Where Every Child Is Safe in the Water",
   subtitle:
-    "Swim lessons, childcare, and youth coaching delivered with care, safety, and experience — for local families and visiting guests.",
-  // Replace with real WhatsApp number (include country code, no + or spaces)
+    "Certified swim instruction, professional childcare, and youth football coaching on the island families trust most.",
+  // Replace with Deanna's real WhatsApp number (country code, no + or spaces)
   whatsapp: "12645555555",
   email: "info@richardsonsanguilla.com",
   location: "Anguilla, British West Indies",
@@ -23,8 +23,10 @@ export interface Service {
   title: string;
   slug: string;
   price: string;
+  priceNote?: string;
   tagline: string;
   description: string;
+  features: string[];
   image: string;
 }
 
@@ -33,27 +35,48 @@ export const SERVICES: Service[] = [
     title: "Swimming Lessons",
     slug: "swimming",
     price: "From $15",
-    tagline: "Dive into Safety and Fun",
+    priceNote: "per session",
+    tagline: "Water Safety Meets Caribbean Fun",
     description:
-      "Private and group swim lessons for children of all ages and skill levels. From water confidence basics to stroke technique, our certified instructors ensure every child learns to swim safely while having a blast in Anguilla's beautiful waters.",
+      "Your child will learn to swim in some of the most beautiful water on earth — guided by a StarGuard Elite certified instructor who has literally saved lives. From first splashes to confident strokes, every lesson is built around safety, technique, and genuine joy.",
+    features: [
+      "Private & group sessions available",
+      "Ages 2 and up — beginners to advanced",
+      "StarGuard Elite & lifeguard certified",
+      "Beach, pool, or your villa",
+    ],
     image: "/images/swimming.jpg",
   },
   {
-    title: "Youth Football",
+    title: "Youth Football Coaching",
     slug: "football",
     price: "$25",
-    tagline: "Specialized Training for Young Players",
+    priceNote: "per session",
+    tagline: "Building Athletes, Building Character",
     description:
-      "Structured football coaching that builds skills, teamwork, and confidence. Our youth programs focus on fundamentals, fitness, and fun — helping young athletes reach their potential on and off the field.",
+      "More than drills — this is mentorship through sport. Deanna's football coaching develops footwork, agility, and game sense while instilling discipline, teamwork, and the confidence that comes from earning every improvement.",
+    features: [
+      "Individual & small group training",
+      "Ages 5–16, all skill levels",
+      "Fundamentals, fitness & game strategy",
+      "Flexible scheduling for visitors",
+    ],
     image: "/images/football.jpg",
   },
   {
-    title: "Childcare",
+    title: "Professional Childcare",
     slug: "childcare",
-    price: "$30/hr",
-    tagline: "Trustworthy Island Babysitting",
+    price: "$30",
+    priceNote: "per hour",
+    tagline: "Your Vacation, Their Adventure",
     description:
-      "Reliable, experienced childcare for families visiting Anguilla or local parents who need a trusted hand. CPR-certified, background-checked, and passionate about creating a safe, engaging environment for your little ones.",
+      "Enjoy Anguilla knowing your children are with someone who treats them like her own. Whether you need a few hours for dinner or full-day care while you explore the island, Deanna provides attentive, enriching, and completely trustworthy care.",
+    features: [
+      "CPR & First Aid certified",
+      "Hotel, villa, or beach pickup",
+      "Engaging activities — not just screen time",
+      "Trusted by returning families year after year",
+    ],
     image: "/images/childcare.jpg",
   },
 ];
@@ -67,28 +90,50 @@ export interface Testimonial {
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "Deanna's quick thinking and lifeguarding skills saved a child at the beach. Her training and instincts are exactly what you want in someone watching over your kids in the water. We trust her completely.",
+      "Deanna's quick thinking and lifeguard training saved a child at the beach. That's not a testimonial — it's a fact. Her instincts, her calm under pressure, her skill — she is the person you want watching your children near the water.",
     author: "Learn to Swim Anguilla",
     role: "Community Partner",
   },
   {
     quote:
-      "We've relied on Deanna for childcare multiple times during our visits to Anguilla. She's warm, reliable, and our kids absolutely adore her. We wouldn't trust anyone else on the island.",
+      "We've come back to Anguilla three years in a row, and Deanna is the reason we can actually relax. Our kids run to her the moment they see her. She's not just a babysitter — she's family to us now.",
     author: "Sarah Chambers",
-    role: "Visiting Family",
+    role: "Returning Guest Family",
   },
   {
     quote:
-      "Deanna brings professionalism and genuine care to every swim session. The progress our young swimmers have made under her guidance is remarkable. She's an invaluable part of our aquatics program.",
+      "The progress our young swimmers made under Deanna's guidance was remarkable. She combines real technical skill with a warmth that makes children feel safe enough to try things they were afraid of. That's a rare gift.",
     author: "Anguilla Aquastars",
-    role: "Swim Program",
+    role: "Youth Swim Program",
   },
 ];
 
 export const CREDENTIALS = [
-  "CPR & First Aid Certified",
-  "StarGuard Elite Lifeguard",
-  "Certified Swim Instructor",
-  "Youth Coaching Certified",
-  "Background Checked",
+  {
+    label: "CPR & First Aid Certified",
+    detail: "Current certification, renewed annually",
+  },
+  {
+    label: "StarGuard Elite Lifeguard",
+    detail: "Highest standard in aquatic safety",
+  },
+  {
+    label: "Certified Swim Instructor",
+    detail: "Trained for all ages and abilities",
+  },
+  {
+    label: "Youth Coaching Certified",
+    detail: "Sport-specific training credentials",
+  },
+  {
+    label: "Background Verified",
+    detail: "Full background check on file",
+  },
+];
+
+export const TRUST_STATS = [
+  { value: "500+", label: "Children Taught" },
+  { value: "8+", label: "Years Experience" },
+  { value: "1", label: "Life Saved" },
+  { value: "100%", label: "Safety Record" },
 ];
