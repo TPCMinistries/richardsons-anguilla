@@ -39,7 +39,7 @@ export default function Testimonials() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid gap-8 md:grid-cols-3"
+          className="grid gap-8 md:grid-cols-2"
         >
           {TESTIMONIALS.map((t, i) => (
             <motion.div

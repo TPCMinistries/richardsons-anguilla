@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, CalendarDays } from "lucide-react";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 
 export default function Header() {
@@ -60,12 +60,12 @@ export default function Header() {
             </a>
           ))}
           <a
-            href={`https://wa.me/${SITE.whatsapp}?text=Hi!%20I'd%20like%20to%20book%20a%20session%20with%20Deanna.`}
+            href={SITE.calendly}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-3 inline-flex items-center gap-2 rounded-full bg-orange px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-orange/25 transition-all hover:bg-orange-dark hover:shadow-xl hover:shadow-orange/30"
           >
-            <Phone className="h-3.5 w-3.5" />
+            <CalendarDays className="h-3.5 w-3.5" />
             Book Now
           </a>
         </nav>
@@ -98,12 +98,12 @@ export default function Header() {
             </a>
           ))}
           <a
-            href={`https://wa.me/${SITE.whatsapp}?text=Hi!%20I'd%20like%20to%20book%20a%20session%20with%20Deanna.`}
+            href={SITE.calendly}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 inline-flex items-center gap-2 rounded-full bg-orange px-6 py-3 text-sm font-semibold text-white"
           >
-            <Phone className="h-4 w-4" />
+            <CalendarDays className="h-4 w-4" />
             Book Now
           </a>
         </nav>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MessageCircle, Heart } from "lucide-react";
+import { CalendarDays, Heart } from "lucide-react";
 import { SITE, NAV_LINKS, SERVICES } from "@/lib/constants";
 
 export default function Footer() {
@@ -70,13 +70,13 @@ export default function Footer() {
             <div className="space-y-3 text-sm text-white/40">
               <p>{SITE.location}</p>
               <a
-                href={`https://wa.me/${SITE.whatsapp}`}
+                href={SITE.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-medium text-[#25D366] transition-colors hover:text-[#20bd5a]"
+                className="inline-flex items-center gap-2 font-medium text-orange transition-colors hover:text-orange-light"
               >
-                <MessageCircle className="h-4 w-4" />
-                WhatsApp Deanna
+                <CalendarDays className="h-4 w-4" />
+                Book on Calendly
               </a>
             </div>
           </div>

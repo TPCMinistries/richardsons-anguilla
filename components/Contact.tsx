@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, MessageCircle, MapPin, Clock, CheckCircle2 } from "lucide-react";
+import { Send, CalendarDays, MapPin, Clock, CheckCircle2 } from "lucide-react";
 import { SITE, CONTACT_SERVICES } from "@/lib/constants";
 import { fadeUp, slideInLeft, slideInRight, staggerContainer } from "@/lib/animations";
 
@@ -42,23 +42,23 @@ export default function Contact() {
           variants={staggerContainer}
           className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16"
         >
-          {/* Left — WhatsApp + Info */}
+          {/* Left — Booking + Info */}
           <motion.div variants={slideInLeft} className="space-y-8">
-            {/* WhatsApp card */}
+            {/* Calendly booking card */}
             <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-              <h3 className="mb-2 text-xl font-bold text-white">Fastest Way to Book</h3>
+              <h3 className="mb-2 text-xl font-bold text-white">Schedule a Session</h3>
               <p className="mb-6 text-white/50">
-                Most families book through WhatsApp. Tap below, tell Deanna your dates and what
-                you need, and she&apos;ll get back to you — usually within the hour.
+                Book directly on Deanna&apos;s calendar. Pick your service, choose a time that
+                works for your family, and you&apos;re all set — no back and forth needed.
               </p>
               <a
-                href={`https://wa.me/${SITE.whatsapp}?text=Hi%20Deanna!%20I'm%20visiting%20Anguilla%20and%20interested%20in%20booking%20your%20services%20for%20my%20children.`}
+                href={SITE.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 rounded-2xl bg-[#25D366] px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-[#25D366]/20 transition-all hover:bg-[#20bd5a] hover:shadow-2xl hover:shadow-[#25D366]/30"
+                className="group inline-flex items-center gap-3 rounded-2xl bg-orange px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange/20 transition-all hover:bg-orange-dark hover:shadow-2xl hover:shadow-orange/30"
               >
-                <MessageCircle className="h-6 w-6" />
-                Message on WhatsApp
+                <CalendarDays className="h-6 w-6" />
+                Book on Calendly
                 <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
               </a>
             </div>
@@ -95,15 +95,15 @@ export default function Contact() {
           >
             {submitted ? (
               <div className="flex flex-col items-center py-16 text-center">
-                <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-[#25D366]/20">
-                  <CheckCircle2 className="h-10 w-10 text-[#25D366]" />
+                <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-orange/20">
+                  <CheckCircle2 className="h-10 w-10 text-orange" />
                 </div>
                 <h3 className="mb-3 text-2xl font-bold text-white">
                   Message Received!
                 </h3>
                 <p className="max-w-sm text-white/50">
                   Thank you for reaching out. Deanna will get back to you soon.
-                  For faster response, message directly on WhatsApp.
+                  For instant booking, schedule directly on Calendly.
                 </p>
               </div>
             ) : (

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Waves, Baby, Dumbbell, LifeBuoy, CalendarDays, Check, ArrowRight } from "lucide-react";
+import { Waves, Baby, Dumbbell, LifeBuoy, CalendarDays, GraduationCap, Check, ArrowRight } from "lucide-react";
 import { SERVICES, SITE } from "@/lib/constants";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
@@ -12,6 +12,7 @@ const ICONS: Record<string, React.ReactNode> = {
   sports: <Dumbbell className="h-8 w-8 text-white" />,
   "water-safety": <LifeBuoy className="h-8 w-8 text-white" />,
   packages: <CalendarDays className="h-8 w-8 text-white" />,
+  "school-programs": <GraduationCap className="h-8 w-8 text-white" />,
 };
 
 export default function Services() {
@@ -53,13 +54,13 @@ export default function Services() {
           ))}
         </motion.div>
 
-        {/* Bottom row: 2 cards centered */}
+        {/* Bottom row: 3 cards */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="mt-8 grid gap-8 lg:grid-cols-2 lg:mx-auto lg:max-w-4xl"
+          className="mt-8 grid gap-8 lg:grid-cols-3"
         >
           {SERVICES.slice(3).map((service) => (
             <ServiceCard key={service.slug} service={service} />
@@ -123,12 +124,12 @@ function ServiceCard({ service }: { service: (typeof SERVICES)[number] }) {
 
         {/* CTA */}
         <a
-          href={`https://wa.me/${SITE.whatsapp}?text=Hi%20Deanna!%20I'm%20interested%20in%20${encodeURIComponent(service.title)}%20for%20my%20family.`}
+          href={SITE.calendly}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-auto inline-flex items-center justify-center gap-2 rounded-xl bg-navy px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-navy-light hover:shadow-lg"
         >
-          {service.slug === "packages" ? "Build My Package" : `Book ${service.title.split(" ")[0]}`}
+          {service.slug === "packages" ? "Build My Package" : service.slug === "school-programs" ? "Inquire About Programs" : `Book ${service.title.split(" ")[0]}`}
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </a>
       </div>

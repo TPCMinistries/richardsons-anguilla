@@ -80,7 +80,7 @@ export default function Hero() {
           className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
           <a
-            href={`https://wa.me/${SITE.whatsapp}?text=Hi%20Deanna!%20I'm%20planning%20a%20trip%20to%20Anguilla%20and%20would%20love%20to%20book%20your%20services%20for%20my%20children.`}
+            href={SITE.calendly}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange/25 transition-all hover:bg-orange-dark hover:shadow-2xl hover:shadow-orange/30"

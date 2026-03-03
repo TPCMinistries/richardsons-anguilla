@@ -4,10 +4,9 @@ export const SITE = {
   name: "Richardson's Anguilla Experience",
   tagline: "Anguilla's Most Trusted Name in Children's Care",
   subtitle:
-    "Private swim lessons, professional childcare, youth sports, and vacation packages — trusted by luxury resorts and families across the island.",
-  // Replace with Deanna's real WhatsApp number (country code, no + or spaces)
-  whatsapp: "12645810337",
-  whatsappPartner: "12645810337",
+    "Private swim lessons, professional childcare, youth sports, school programs, and vacation packages — trusted by luxury resorts and families across the island.",
+  // Replace with Deanna's real Calendly URL once set up
+  calendly: "https://calendly.com/richardsons-anguilla",
   email: "info@richardsonsanguilla.com",
   location: "Anguilla, British West Indies",
 };
@@ -47,7 +46,7 @@ export const SERVICES: Service[] = [
       "StarGuard Elite & lifeguard certified",
       "Beach, resort pool, or your private villa",
     ],
-    image: "/images/swimming.jpg",
+    image: "/images/swim-action.png",
   },
   {
     title: "Professional Childcare",
@@ -112,6 +111,21 @@ export const SERVICES: Service[] = [
     ],
     image: "/images/packages.jpg",
   },
+  {
+    title: "School Programs & Training",
+    slug: "school-programs",
+    price: "Inquire",
+    tagline: "Empowering the Next Generation",
+    description:
+      "Beyond private clients, Deanna brings her expertise directly into Anguilla's schools. From water safety education to youth fitness and student mentorship, she facilitates programs that build life skills, confidence, and community resilience — the same professionalism and care she brings to every family she serves.",
+    features: [
+      "Water safety education for school groups",
+      "Youth fitness & athletics programs",
+      "Student mentorship & leadership facilitation",
+      "Available for all schools across Anguilla",
+    ],
+    image: "/images/sports.jpg",
+  },
 ];
 
 export interface Testimonial {
@@ -139,6 +153,12 @@ export const TESTIMONIALS: Testimonial[] = [
     author: "Anguilla Aquastars",
     role: "Youth Swim Program",
   },
+  {
+    quote:
+      "I've worked alongside Deanna since 2018 through the Anguilla Red Cross. She passed her instructor certification with near-perfect scores and has volunteered hundreds of hours teaching children to swim — often at her own expense. Her dedication, professionalism, and teaching skill are exceptional.",
+    author: "Frank Cannon",
+    role: "Water Safety Instructor Educator, Anguilla Red Cross",
+  },
 ];
 
 export const CREDENTIALS = [
@@ -157,6 +177,10 @@ export const CREDENTIALS = [
   {
     label: "Youth Coaching Certified",
     detail: "Sport-specific training credentials",
+  },
+  {
+    label: "WSI Certified Instructor",
+    detail: "Anguilla Red Cross trained, since 2018",
   },
   {
     label: "Background Verified",
@@ -179,7 +203,7 @@ export interface Partner {
 export const PARTNERS: Partner[] = [
   {
     name: "Zemi Beach House",
-    type: "Hilton LXR Resort",
+    type: "Luxury Resort",
   },
   {
     name: "Learn to Swim Anguilla",
@@ -215,6 +239,7 @@ export const CONTACT_SERVICES = [
   "Professional Childcare",
   "Youth Sports & Fitness",
   "Water Safety Programs",
+  "School Programs & Training",
   "Vacation Package",
   "Multiple Services",
   "Hospitality Partnership Inquiry",

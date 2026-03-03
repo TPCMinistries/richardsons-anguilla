@@ -97,7 +97,7 @@ export default function ForPartners() {
           </p>
 
           <a
-            href={`https://wa.me/${SITE.whatsappPartner}?text=Hi%20Deanna,%20I'm%20reaching%20out%20about%20a%20potential%20hospitality%20partnership.%20I'd%20love%20to%20discuss%20children's%20services%20for%20our%20property.`}
+            href={SITE.calendly}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange/25 transition-all hover:bg-orange-dark hover:shadow-2xl hover:shadow-orange/30"

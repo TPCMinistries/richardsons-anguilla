@@ -3,7 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import CalendlyButton from "@/components/CalendlyButton";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -49,7 +49,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <WhatsAppButton />
+        <CalendlyButton />
       </body>
     </html>
   );

@@ -11,6 +11,7 @@ const ICONS: Record<string, React.ReactNode> = {
   "StarGuard Elite Lifeguard": <Award className="h-5 w-5 text-orange" />,
   "Certified Swim Instructor": <CheckCircle className="h-5 w-5 text-orange" />,
   "Youth Coaching Certified": <Award className="h-5 w-5 text-orange" />,
+  "WSI Certified Instructor": <Award className="h-5 w-5 text-orange" />,
   "Background Verified": <ShieldCheck className="h-5 w-5 text-orange" />,
 };
 
@@ -64,7 +65,7 @@ export default function About() {
               </p>
               <p>
                 Currently partnered with{" "}
-                <strong className="text-navy/80">Zemi Beach House</strong> (Hilton LXR)
+                <strong className="text-navy/80">Zemi Beach House</strong>
                 for swim lessons and kids&apos; club programming, and with{" "}
                 <strong className="text-navy/80">Learn to Swim Anguilla</strong> for
                 island-wide water safety, Deanna has spent over eight years building the
