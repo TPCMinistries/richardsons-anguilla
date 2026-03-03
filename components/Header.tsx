@@ -36,16 +36,14 @@ export default function Header() {
           href="#home"
           className="group flex items-center gap-2"
         >
-          <div className="overflow-hidden rounded-lg bg-white/95 px-2 py-1 shadow-sm transition-transform group-hover:scale-105">
-            <Image
-              src="/images/logo.jpg"
-              alt="Richardson's Anguilla Experience"
-              width={516}
-              height={1024}
-              className="h-12 w-auto object-contain"
-              priority
-            />
-          </div>
+          <Image
+            src="/images/logo.png"
+            alt="Richardson's Anguilla Experience"
+            width={400}
+            height={280}
+            className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
+            priority
+          />
         </a>
 
         {/* Desktop Nav */}

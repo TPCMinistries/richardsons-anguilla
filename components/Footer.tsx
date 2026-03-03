@@ -11,12 +11,12 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="mb-4 inline-block overflow-hidden rounded-xl bg-white/95 px-3 py-2">
+            <div className="mb-4">
               <Image
-                src="/images/logo.jpg"
+                src="/images/logo.png"
                 alt="Richardson's Anguilla Experience"
-                width={516}
-                height={1024}
+                width={400}
+                height={280}
                 className="h-16 w-auto object-contain"
               />
             </div>
