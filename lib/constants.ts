@@ -5,17 +5,32 @@ export const SITE = {
   tagline: "Anguilla's Most Trusted Name in Children's Care",
   subtitle:
     "Private swim lessons, professional childcare, youth sports, school programs, and vacation packages — trusted by luxury resorts and families across the island.",
-  // Replace with Deanna's real Calendly URL once set up
+  url: "https://richardsonsanguilla.com",
+  // Real WhatsApp — primary booking channel. (Replace `calendly` once a real link exists.)
+  whatsapp: "12645810337",
+  phoneDisplay: "+1 (264) 581-0337",
   calendly: "https://calendly.com/richardsons-anguilla",
   email: "info@richardsonsanguilla.com",
   location: "Anguilla, British West Indies",
 };
+
+/** Build a WhatsApp click-to-chat link with an optional pre-filled message. */
+export function waLink(message?: string) {
+  const base = `https://wa.me/${SITE.whatsapp}`;
+  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
+}
+
+/** Primary booking action used across CTAs. */
+export const BOOK_URL = waLink(
+  "Hi Deanna! I found your website and I'd love to book children's services in Anguilla. Here's what I'm looking for:",
+);
 
 export const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Testimonials", href: "#testimonials" },
+  { label: "FAQ", href: "#faq" },
   { label: "For Partners", href: "#partners" },
   { label: "Contact", href: "#contact" },
 ] as const;
@@ -155,7 +170,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "I've worked alongside Deanna since 2018 through the Anguilla Red Cross. She passed her instructor certification with near-perfect scores and has volunteered hundreds of hours teaching children to swim — often at her own expense. Her dedication, professionalism, and teaching skill are exceptional.",
+      "I've worked alongside Deanna since 2018, when she began teaching as an assistant coach through the Anguilla Red Cross. She earned her Water Safety Instructor certification in 2019 with near-perfect scores and has volunteered hundreds of hours teaching children to swim — often at her own expense. Her dedication, professionalism, and teaching skill are exceptional.",
     author: "Frank Cannon",
     role: "Water Safety Instructor Educator, Anguilla Red Cross",
   },
@@ -180,7 +195,7 @@ export const CREDENTIALS = [
   },
   {
     label: "WSI Certified Instructor",
-    detail: "Anguilla Red Cross trained, since 2018",
+    detail: "Anguilla Red Cross certified 2019 · teaching since 2018",
   },
   {
     label: "Background Verified",
@@ -198,16 +213,18 @@ export const TRUST_STATS = [
 export interface Partner {
   name: string;
   type: string;
+  logo?: string;
 }
 
 export const PARTNERS: Partner[] = [
   {
-    name: "Zemi Beach House",
-    type: "Luxury Resort",
-  },
-  {
     name: "Learn to Swim Anguilla",
     type: "Community Partner",
+  },
+  {
+    name: "Lyme Seeds",
+    type: "Youth Football",
+    logo: "/images/lyme-seeds.jpg",
   },
 ];
 
@@ -244,4 +261,42 @@ export const CONTACT_SERVICES = [
   "Multiple Services",
   "Hospitality Partnership Inquiry",
   "Other / Question",
+];
+
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
+export const FAQS: FAQ[] = [
+  {
+    question: "How far in advance should I book?",
+    answer:
+      "For peak season (December–April) and holidays, two to four weeks ahead is ideal — those dates fill quickly. For other times, a week's notice usually secures your preferred times. When in doubt, message Deanna directly; she'll always try to make it work.",
+  },
+  {
+    question: "Where do the sessions take place?",
+    answer:
+      "Wherever your family is staying. Deanna comes to your resort pool, private villa, or a calm beach, and also runs sessions through Learn to Swim Anguilla. Service covers the entire island, so there's no need to arrange transport for the kids.",
+  },
+  {
+    question: "What ages and skill levels do you work with?",
+    answer:
+      "Swim lessons start at age 2 — from first splashes to confident open-water strokes — and youth sports run roughly ages 5–16. Childcare is available for infants through teens. Every plan is tailored to your child's age, comfort, and goals.",
+  },
+  {
+    question: "Are you certified and insured?",
+    answer:
+      "Yes. Deanna is a StarGuard Elite certified lifeguard, a Red Cross–certified Water Safety Instructor (2019), and holds current CPR & First Aid certification. She is background-verified and has been teaching children to swim since 2018.",
+  },
+  {
+    question: "How do I pay, and what does it cost?",
+    answer:
+      "Swim lessons and youth coaching start at $75 per session, childcare from $50 per hour, and multi-day vacation packages from $250. Final pricing depends on group size, duration, and location — message Deanna for a quick, no-obligation quote.",
+  },
+  {
+    question: "What if our plans change or the weather turns?",
+    answer:
+      "Life and weather happen. Sessions can be rescheduled with reasonable notice, and Deanna will always prioritize your children's safety — moving a beach session to a pool or another time whenever conditions call for it.",
+  },
 ];

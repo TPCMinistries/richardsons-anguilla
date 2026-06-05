@@ -28,7 +28,7 @@ export default function About() {
         >
           {/* Photo side */}
           <motion.div variants={slideInLeft} className="relative">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-cream">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-cream shadow-premium">
               <Image
                 src="/images/deanna.png"
                 alt="Deanna Richardson — Founder, Richardson's Anguilla Experience"
@@ -39,7 +39,7 @@ export default function About() {
             </div>
 
             {/* Floating accent card */}
-            <div className="absolute -right-4 -bottom-6 rounded-2xl bg-navy px-6 py-4 shadow-xl lg:-right-8">
+            <div className="absolute -right-4 -bottom-6 rounded-2xl bg-navy px-6 py-4 shadow-premium lg:-right-8">
               <p className="text-3xl font-bold text-orange">8+</p>
               <p className="text-sm font-medium text-white/70">Years of Trust</p>
             </div>
@@ -64,14 +64,15 @@ export default function About() {
                 families.
               </p>
               <p>
-                Currently partnered with{" "}
-                <strong className="text-navy/80">Zemi Beach House</strong>
-                for swim lessons and kids&apos; club programming, and with{" "}
+                Partnered with{" "}
                 <strong className="text-navy/80">Learn to Swim Anguilla</strong> for
-                island-wide water safety, Deanna has spent over eight years building the
-                kind of reputation that luxury hospitality demands: impeccable credentials,
-                warm professionalism, and the rare ability to make every child feel safe,
-                capable, and genuinely cared for.
+                island-wide water safety — and with experience delivering swim lessons and
+                kids&apos; club programming at resorts including{" "}
+                <strong className="text-navy/80">Zemi Beach House</strong> — Deanna has
+                spent over eight years building the kind of reputation that luxury
+                hospitality demands: impeccable credentials, warm professionalism, and the
+                rare ability to make every child feel safe, capable, and genuinely cared
+                for.
               </p>
               <p>
                 She launched Richardson&apos;s Anguilla Experience because demand outgrew

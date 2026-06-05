@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { CalendarDays, Heart } from "lucide-react";
-import { SITE, NAV_LINKS, SERVICES } from "@/lib/constants";
+import { MessageCircle, Heart } from "lucide-react";
+import { SITE, NAV_LINKS, SERVICES, BOOK_URL } from "@/lib/constants";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -70,14 +70,15 @@ export default function Footer() {
             <div className="space-y-3 text-sm text-white/40">
               <p>{SITE.location}</p>
               <a
-                href={SITE.calendly}
+                href={BOOK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 font-medium text-orange transition-colors hover:text-orange-light"
               >
-                <CalendarDays className="h-4 w-4" />
-                Book on Calendly
+                <MessageCircle className="h-4 w-4" />
+                Message on WhatsApp
               </a>
+              <p className="text-white/40">{SITE.phoneDisplay}</p>
             </div>
           </div>
         </div>

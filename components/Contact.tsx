@@ -2,12 +2,30 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CalendarDays, MapPin, Clock, CheckCircle2 } from "lucide-react";
-import { SITE, CONTACT_SERVICES } from "@/lib/constants";
+import { Send, MessageCircle, MapPin, Clock, CheckCircle2 } from "lucide-react";
+import { SITE, CONTACT_SERVICES, BOOK_URL, waLink } from "@/lib/constants";
 import { fadeUp, slideInLeft, slideInRight, staggerContainer } from "@/lib/animations";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const message = [
+      `Hi Deanna! I'd like to enquire about children's services in Anguilla.`,
+      ``,
+      `Name: ${data.get("name") || "—"}`,
+      `Email: ${data.get("email") || "—"}`,
+      `Service: ${data.get("service") || "—"}`,
+      `Travel dates: ${data.get("dates") || "—"}`,
+      `Children & ages: ${data.get("children") || "—"}`,
+      ``,
+      `${data.get("message") || ""}`,
+    ].join("\n");
+    window.open(waLink(message), "_blank", "noopener,noreferrer");
+    setSubmitted(true);
+  }
 
   return (
     <section id="contact" className="relative overflow-hidden bg-navy py-24 md:py-32">
@@ -44,23 +62,24 @@ export default function Contact() {
         >
           {/* Left — Booking + Info */}
           <motion.div variants={slideInLeft} className="space-y-8">
-            {/* Calendly booking card */}
+            {/* WhatsApp booking card */}
             <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-              <h3 className="mb-2 text-xl font-bold text-white">Schedule a Session</h3>
-              <p className="mb-6 text-white/50">
-                Book directly on Deanna&apos;s calendar. Pick your service, choose a time that
-                works for your family, and you&apos;re all set — no back and forth needed.
+              <h3 className="mb-2 text-xl font-bold text-white">Message Deanna Directly</h3>
+              <p className="mb-6 text-white/60">
+                The fastest way to book. Send a quick WhatsApp message with your dates and
+                what you need — Deanna replies personally, usually within hours.
               </p>
               <a
-                href={SITE.calendly}
+                href={BOOK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 rounded-2xl bg-orange px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange/20 transition-all hover:bg-orange-dark hover:shadow-2xl hover:shadow-orange/30"
+                className="group inline-flex items-center gap-3 rounded-2xl bg-orange px-8 py-4 text-lg font-semibold text-white shadow-premium transition-all hover:-translate-y-0.5 hover:bg-orange-dark"
               >
-                <CalendarDays className="h-6 w-6" />
-                Book on Calendly
+                <MessageCircle className="h-6 w-6" />
+                Chat on WhatsApp
                 <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
               </a>
+              <p className="mt-4 text-sm text-white/40">{SITE.phoneDisplay}</p>
             </div>
 
             {/* Info cards */}
@@ -99,28 +118,21 @@ export default function Contact() {
                   <CheckCircle2 className="h-10 w-10 text-orange" />
                 </div>
                 <h3 className="mb-3 text-2xl font-bold text-white">
-                  Message Received!
+                  Opening WhatsApp…
                 </h3>
-                <p className="max-w-sm text-white/50">
-                  Thank you for reaching out. Deanna will get back to you soon.
-                  For instant booking, schedule directly on Calendly.
+                <p className="max-w-sm text-white/60">
+                  Your details are ready to send in WhatsApp — just hit send and Deanna
+                  will take it from there. If it didn&apos;t open, message{" "}
+                  <span className="font-semibold text-orange">{SITE.phoneDisplay}</span>.
                 </p>
               </div>
             ) : (
               <>
                 <h3 className="mb-1 text-xl font-bold text-white">Send a Message</h3>
-                <p className="mb-6 text-sm text-white/40">
-                  Prefer email? Fill this out and Deanna will respond within 24 hours.
+                <p className="mb-6 text-sm text-white/50">
+                  Fill this out and we&apos;ll open WhatsApp with your details ready to send.
                 </p>
-                <form
-                  action="https://formspree.io/f/YOUR_FORM_ID"
-                  method="POST"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setSubmitted(true);
-                  }}
-                  className="space-y-5"
-                >
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
                       <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-white/70">
@@ -214,7 +226,7 @@ export default function Contact() {
                     className="flex w-full items-center justify-center gap-2 rounded-xl bg-orange px-6 py-3.5 font-semibold text-white shadow-lg shadow-orange/20 transition-all hover:bg-orange-dark hover:shadow-xl hover:shadow-orange/25"
                   >
                     <Send className="h-4 w-4" />
-                    Send Message
+                    Send via WhatsApp
                   </button>
                 </form>
               </>

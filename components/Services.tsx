@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Waves, Baby, Dumbbell, LifeBuoy, CalendarDays, GraduationCap, Check, ArrowRight } from "lucide-react";
-import { SERVICES, SITE } from "@/lib/constants";
+import { SERVICES, BOOK_URL } from "@/lib/constants";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
 const ICONS: Record<string, React.ReactNode> = {
@@ -35,7 +35,7 @@ export default function Services() {
           <motion.h2 variants={fadeUp} className="mb-5 text-3xl font-bold text-navy md:text-5xl">
             Services Built on Trust
           </motion.h2>
-          <motion.p variants={fadeUp} className="mx-auto max-w-2xl text-lg text-navy/50">
+          <motion.p variants={fadeUp} className="mx-auto max-w-2xl text-lg text-navy/60">
             Every service is backed by professional certification, luxury resort experience, and a
             genuine love for working with children. This isn&apos;t a side gig — it&apos;s a calling.
           </motion.p>
@@ -75,7 +75,7 @@ function ServiceCard({ service }: { service: (typeof SERVICES)[number] }) {
   return (
     <motion.div
       variants={fadeUp}
-      className="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+      className="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-navy/[0.04] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-premium"
     >
       {/* Photo header */}
       <div className="relative h-52 overflow-hidden">
@@ -108,7 +108,7 @@ function ServiceCard({ service }: { service: (typeof SERVICES)[number] }) {
         <p className="mb-4 text-sm font-medium text-orange">
           {service.tagline}
         </p>
-        <p className="mb-6 text-[15px] leading-relaxed text-navy/55">
+        <p className="mb-6 text-[15px] leading-relaxed text-navy/65">
           {service.description}
         </p>
 
@@ -124,7 +124,7 @@ function ServiceCard({ service }: { service: (typeof SERVICES)[number] }) {
 
         {/* CTA */}
         <a
-          href={SITE.calendly}
+          href={BOOK_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-auto inline-flex items-center justify-center gap-2 rounded-xl bg-navy px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-navy-light hover:shadow-lg"

@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronDown, ShieldCheck } from "lucide-react";
-import { SITE, TRUST_STATS } from "@/lib/constants";
+import { ChevronDown, ShieldCheck, MessageCircle } from "lucide-react";
+import { SITE, TRUST_STATS, BOOK_URL } from "@/lib/constants";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
 export default function Hero() {
@@ -23,7 +23,14 @@ export default function Hero() {
       />
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-navy/70" />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/50 to-navy/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/55 to-navy/85" />
+
+      {/* Ambient warm accent orbs */}
+      <div className="animate-drift pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-orange/20 blur-[120px]" />
+      <div
+        className="animate-drift pointer-events-none absolute -bottom-32 right-0 h-[28rem] w-[28rem] rounded-full bg-ocean/25 blur-[140px]"
+        style={{ animationDelay: "-7s" }}
+      />
 
       {/* Subtle wave pattern at bottom */}
       <div className="absolute right-0 bottom-0 left-0">
@@ -51,25 +58,23 @@ export default function Hero() {
         <motion.div variants={fadeUp} className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm">
           <ShieldCheck className="h-4 w-4 text-orange" />
           <span className="text-sm font-medium text-white/80">
-            Trusted by Zemi Beach House &middot; StarGuard Elite Certified
+            Learn to Swim Anguilla Partner &middot; StarGuard Elite Certified
           </span>
         </motion.div>
 
         {/* Headline */}
         <motion.h1
           variants={fadeUp}
-          className="mb-6 text-4xl leading-[1.1] font-bold tracking-tight text-white sm:text-5xl md:text-7xl"
+          className="mb-6 text-[2.6rem] leading-[1.05] font-bold tracking-tight text-white sm:text-6xl md:text-7xl"
         >
           Anguilla&apos;s Most Trusted Name in{" "}
-          <span className="bg-gradient-to-r from-orange to-orange-light bg-clip-text text-transparent">
-            Children&apos;s Care
-          </span>
+          <span className="text-gradient-warm">Children&apos;s Care</span>
         </motion.h1>
 
         {/* Subheading */}
         <motion.p
           variants={fadeUp}
-          className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/60 md:text-xl"
+          className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl"
         >
           {SITE.subtitle}
         </motion.p>
@@ -80,17 +85,18 @@ export default function Hero() {
           className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
           <a
-            href={SITE.calendly}
+            href={BOOK_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange/25 transition-all hover:bg-orange-dark hover:shadow-2xl hover:shadow-orange/30"
+            className="group inline-flex items-center gap-2.5 rounded-full bg-orange px-8 py-4 text-lg font-semibold text-white shadow-premium transition-all hover:-translate-y-0.5 hover:bg-orange-dark"
           >
+            <MessageCircle className="h-5 w-5" />
             Book Before You Arrive
             <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
           </a>
           <a
             href="#services"
-            className="rounded-full border-2 border-white/20 px-8 py-4 text-lg font-semibold text-white transition-all hover:border-white/40 hover:bg-white/5"
+            className="rounded-full border-2 border-white/25 px-8 py-4 text-lg font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/10"
           >
             Explore Services
           </a>
@@ -102,9 +108,12 @@ export default function Hero() {
           className="mx-auto mt-16 grid max-w-2xl grid-cols-2 gap-4 sm:grid-cols-4"
         >
           {TRUST_STATS.map((stat) => (
-            <div key={stat.label} className="rounded-xl border border-white/10 bg-white/5 px-4 py-5 backdrop-blur-sm">
+            <div
+              key={stat.label}
+              className="rounded-xl border border-white/10 bg-white/5 px-4 py-5 backdrop-blur-sm transition-colors hover:border-white/25 hover:bg-white/[0.08]"
+            >
               <p className="text-2xl font-bold text-orange md:text-3xl">{stat.value}</p>
-              <p className="mt-1 text-xs font-medium tracking-wide text-white/50 uppercase">
+              <p className="mt-1 text-xs font-medium tracking-wide text-white/65 uppercase">
                 {stat.label}
               </p>
             </div>

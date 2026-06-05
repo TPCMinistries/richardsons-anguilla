@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { SITE } from "@/lib/constants";
+import { MessageCircle } from "lucide-react";
+import { BOOK_URL } from "@/lib/constants";
 import { fadeUp } from "@/lib/animations";
 
 export default function CtaBanner() {
@@ -33,11 +34,12 @@ export default function CtaBanner() {
           plan ahead get the best availability. Your children will have the time of their lives.
         </p>
         <a
-          href={SITE.calendly}
+          href={BOOK_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-semibold text-ocean shadow-xl transition-all hover:shadow-2xl hover:bg-cream"
+          className="group inline-flex items-center gap-2.5 rounded-full bg-white px-8 py-4 text-lg font-semibold text-ocean shadow-xl transition-all hover:-translate-y-0.5 hover:bg-cream hover:shadow-2xl"
         >
+          <MessageCircle className="h-5 w-5" />
           Reserve Your Dates
           <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
         </a>

@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Menu, X, CalendarDays } from "lucide-react";
-import { NAV_LINKS, SITE } from "@/lib/constants";
+import { Menu, X, MessageCircle } from "lucide-react";
+import { NAV_LINKS, BOOK_URL } from "@/lib/constants";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -58,12 +58,12 @@ export default function Header() {
             </a>
           ))}
           <a
-            href={SITE.calendly}
+            href={BOOK_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-3 inline-flex items-center gap-2 rounded-full bg-orange px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-orange/25 transition-all hover:bg-orange-dark hover:shadow-xl hover:shadow-orange/30"
           >
-            <CalendarDays className="h-3.5 w-3.5" />
+            <MessageCircle className="h-3.5 w-3.5" />
             Book Now
           </a>
         </nav>
@@ -96,12 +96,12 @@ export default function Header() {
             </a>
           ))}
           <a
-            href={SITE.calendly}
+            href={BOOK_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 inline-flex items-center gap-2 rounded-full bg-orange px-6 py-3 text-sm font-semibold text-white"
           >
-            <CalendarDays className="h-4 w-4" />
+            <MessageCircle className="h-4 w-4" />
             Book Now
           </a>
         </nav>

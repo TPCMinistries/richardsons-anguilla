@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CalendarDays } from "lucide-react";
-import { SITE } from "@/lib/constants";
+import { MessageCircle } from "lucide-react";
+import { BOOK_URL } from "@/lib/constants";
 
 export default function CalendlyButton() {
   const [visible, setVisible] = useState(false);
@@ -15,15 +15,20 @@ export default function CalendlyButton() {
 
   return (
     <a
-      href={SITE.calendly}
+      href={BOOK_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Book on Calendly"
-      className={`fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-orange text-white shadow-lg shadow-orange/25 transition-all hover:scale-110 hover:shadow-xl hover:bg-orange-dark ${
-        visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0 pointer-events-none"
+      aria-label="Message Deanna on WhatsApp"
+      className={`group fixed bottom-6 right-6 z-50 flex items-center rounded-full bg-orange text-white shadow-premium transition-all hover:bg-orange-dark ${
+        visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-4 opacity-0"
       }`}
     >
-      <CalendarDays className="h-7 w-7" />
+      <span className="flex h-14 w-14 shrink-0 items-center justify-center">
+        <MessageCircle className="h-7 w-7" />
+      </span>
+      <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold transition-all duration-300 group-hover:max-w-[150px] group-hover:pr-5">
+        Message Deanna
+      </span>
     </a>
   );
 }

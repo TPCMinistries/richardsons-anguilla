@@ -3,7 +3,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Building2, ShieldCheck, Handshake, ArrowRight } from "lucide-react";
-import { SITE, PARTNER_BENEFITS } from "@/lib/constants";
+import { PARTNER_BENEFITS, waLink } from "@/lib/constants";
+
+const PARTNER_BOOK_URL = waLink(
+  "Hi Deanna! I'm reaching out on behalf of a resort/villa company in Anguilla about a children's services partnership.",
+);
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
 export default function ForPartners() {
@@ -86,7 +90,7 @@ export default function ForPartners() {
             </span>
             <span className="flex items-center gap-2">
               <Handshake className="h-4 w-4 text-orange" />
-              Currently partnered with Zemi Beach House
+              Partnered with Learn to Swim Anguilla
             </span>
           </div>
 
@@ -97,10 +101,10 @@ export default function ForPartners() {
           </p>
 
           <a
-            href={SITE.calendly}
+            href={PARTNER_BOOK_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-orange/25 transition-all hover:bg-orange-dark hover:shadow-2xl hover:shadow-orange/30"
+            className="group inline-flex items-center gap-2 rounded-full bg-orange px-8 py-4 text-lg font-semibold text-white shadow-premium transition-all hover:-translate-y-0.5 hover:bg-orange-dark"
           >
             Discuss a Partnership
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

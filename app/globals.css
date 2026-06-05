@@ -26,6 +26,8 @@ body {
   color: #1a1a1a;
   background: #ffffff;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 h1,
@@ -33,11 +35,17 @@ h2,
 h3,
 h4 {
   font-family: var(--font-heading), Georgia, serif;
+  text-wrap: balance;
+  letter-spacing: -0.015em;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 /* Smooth scroll offset for fixed header */
 section[id] {
-  scroll-margin-top: 80px;
+  scroll-margin-top: 88px;
 }
 
 /* Custom selection color */
@@ -46,8 +54,51 @@ section[id] {
   color: #0F2B46;
 }
 
+/* Visible keyboard focus for accessibility (mouse clicks stay clean) */
+:focus-visible {
+  outline: 2px solid #E8831A;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 /* Subtle gradient border for trust badges */
 .trust-badge {
   background: linear-gradient(135deg, #FFF8F0, #ffffff);
   border: 1px solid #E8831A20;
+}
+
+/* Premium layered shadow for floating cards */
+.shadow-premium {
+  box-shadow:
+    0 1px 2px rgba(15, 43, 70, 0.04),
+    0 8px 24px -8px rgba(15, 43, 70, 0.12),
+    0 24px 48px -24px rgba(15, 43, 70, 0.18);
+}
+
+/* Soft warm gradient text accent */
+.text-gradient-warm {
+  background: linear-gradient(135deg, #E8831A, #f09a3e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Slow ambient drift for hero accent orbs */
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -24px, 0) scale(1.06); }
+}
+.animate-drift { animation: drift 14s ease-in-out infinite; }
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

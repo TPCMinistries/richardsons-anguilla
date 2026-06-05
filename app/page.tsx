@@ -3,6 +3,7 @@ import TrustedBy from "@/components/TrustedBy";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
+import Faq from "@/components/Faq";
 import ForPartners from "@/components/ForPartners";
 import CtaBanner from "@/components/CtaBanner";
 import Contact from "@/components/Contact";
@@ -15,6 +16,7 @@ export default function Home() {
       <About />
       <Services />
       <Testimonials />
+      <Faq />
       <ForPartners />
       <CtaBanner />
       <Contact />

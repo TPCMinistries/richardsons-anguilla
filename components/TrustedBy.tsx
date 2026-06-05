@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { PARTNERS } from "@/lib/constants";
 import { fadeUp } from "@/lib/animations";
@@ -21,10 +22,20 @@ export default function TrustedBy() {
         <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
           {PARTNERS.map((partner) => (
             <div key={partner.name} className="flex flex-col items-center gap-1.5">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-navy/5">
-                <span className="text-lg font-bold text-navy/60 font-[family-name:var(--font-heading)]">
-                  {partner.name.charAt(0)}
-                </span>
+              <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl bg-navy/5">
+                {partner.logo ? (
+                  <Image
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    width={56}
+                    height={56}
+                    className="h-full w-full object-contain p-1"
+                  />
+                ) : (
+                  <span className="text-lg font-bold text-navy/60 font-[family-name:var(--font-heading)]">
+                    {partner.name.charAt(0)}
+                  </span>
+                )}
               </div>
               <p className="text-sm font-semibold text-navy/70">{partner.name}</p>
               <p className="text-[11px] text-navy/35">{partner.type}</p>
