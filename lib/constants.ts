@@ -218,6 +218,11 @@ export interface Partner {
 
 export const PARTNERS: Partner[] = [
   {
+    name: "Anguilla Aqua Stars",
+    type: "Youth Swim Program",
+    logo: "/images/anguilla-aqua-stars.jpg",
+  },
+  {
     name: "Learn to Swim Anguilla",
     type: "Community Partner",
   },

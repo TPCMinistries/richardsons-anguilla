@@ -21,18 +21,18 @@ export default function TrustedBy() {
 
         <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
           {PARTNERS.map((partner) => (
-            <div key={partner.name} className="flex flex-col items-center gap-1.5">
-              <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl bg-navy/5">
+            <div key={partner.name} className="flex flex-col items-center gap-2 text-center">
+              <div className="flex h-16 items-center justify-center">
                 {partner.logo ? (
                   <Image
                     src={partner.logo}
                     alt={`${partner.name} logo`}
-                    width={56}
-                    height={56}
-                    className="h-full w-full object-contain p-1"
+                    width={160}
+                    height={64}
+                    className="h-16 w-auto max-w-[150px] object-contain"
                   />
                 ) : (
-                  <span className="text-lg font-bold text-navy/60 font-[family-name:var(--font-heading)]">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-navy/5 text-lg font-bold text-navy/60 font-[family-name:var(--font-heading)]">
                     {partner.name.charAt(0)}
                   </span>
                 )}
@@ -43,9 +43,11 @@ export default function TrustedBy() {
           ))}
 
           {/* Future partners placeholder */}
-          <div className="flex flex-col items-center gap-1.5 opacity-40">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-dashed border-navy/15">
-              <span className="text-lg font-bold text-navy/30">+</span>
+          <div className="flex flex-col items-center gap-2 text-center opacity-40">
+            <div className="flex h-16 items-center justify-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-dashed border-navy/15">
+                <span className="text-lg font-bold text-navy/30">+</span>
+              </div>
             </div>
             <p className="text-sm font-semibold text-navy/40">Your Resort</p>
             <p className="text-[11px] text-navy/25">Partner with us</p>
