@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState, useTransition } from "react";
 import {
   LogOut,
@@ -9,6 +10,7 @@ import {
   Calendar,
   Users,
   Inbox,
+  KeyRound,
 } from "lucide-react";
 import { LEAD_STATUSES, type Lead, type LeadStatus } from "@/lib/types";
 import { updateLeadStatus, updateLeadNotes, signOut } from "./actions";
@@ -72,14 +74,22 @@ export default function AdminDashboard({
           </h1>
           <p className="text-sm text-navy/50">Signed in as {userEmail}</p>
         </div>
-        <form action={signOut}>
-          <button
-            type="submit"
+        <div className="flex items-center gap-2">
+          <Link
+            href="/admin/account"
             className="inline-flex items-center gap-2 rounded-xl border border-navy/15 bg-white px-4 py-2 text-sm font-medium text-navy/70 transition-colors hover:bg-navy/5"
           >
-            <LogOut className="h-4 w-4" /> Sign out
-          </button>
-        </form>
+            <KeyRound className="h-4 w-4" /> Account
+          </Link>
+          <form action={signOut}>
+            <button
+              type="submit"
+              className="inline-flex items-center gap-2 rounded-xl border border-navy/15 bg-white px-4 py-2 text-sm font-medium text-navy/70 transition-colors hover:bg-navy/5"
+            >
+              <LogOut className="h-4 w-4" /> Sign out
+            </button>
+          </form>
+        </div>
       </header>
 
       {/* Filter tabs */}
