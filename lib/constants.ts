@@ -5,12 +5,12 @@ export const SITE = {
   tagline: "Anguilla's Most Trusted Name in Children's Care",
   subtitle:
     "Private swim lessons, professional childcare, youth sports, school programs, and vacation packages — trusted by luxury resorts and families across the island.",
-  url: "https://richardsonsanguilla.com",
+  url: "https://raeperience.com",
   // Real WhatsApp — primary booking channel. (Replace `calendly` once a real link exists.)
   whatsapp: "12645810337",
   phoneDisplay: "+1 (264) 581-0337",
   calendly: "https://calendly.com/richardsons-anguilla",
-  email: "info@richardsonsanguilla.com",
+  email: "info@raeperience.com",
   location: "Anguilla, British West Indies",
 };
 
