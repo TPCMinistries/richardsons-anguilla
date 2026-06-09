@@ -2,9 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { SITE, FAQS } from "@/lib/constants";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import CalendlyButton from "@/components/CalendlyButton";
+import SiteChrome from "@/components/SiteChrome";
 import MotionProvider from "@/components/MotionProvider";
 
 const playfair = Playfair_Display({
@@ -126,10 +124,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <MotionProvider>
-          <Header />
-          {children}
-          <Footer />
-          <CalendlyButton />
+          <SiteChrome>{children}</SiteChrome>
         </MotionProvider>
       </body>
     </html>

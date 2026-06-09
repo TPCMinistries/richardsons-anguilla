@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Send, MessageCircle, MapPin, Clock, CheckCircle2 } from "lucide-react";
 import { SITE, CONTACT_SERVICES, BOOK_URL, waLink } from "@/lib/constants";
 import { fadeUp, slideInLeft, slideInRight, staggerContainer } from "@/lib/animations";
+import { createLead } from "@/app/actions/leads";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -23,7 +24,21 @@ export default function Contact() {
       ``,
       `${data.get("message") || ""}`,
     ].join("\n");
+
+    // Open WhatsApp synchronously so the click gesture isn't lost to popup blockers.
     window.open(waLink(message), "_blank", "noopener,noreferrer");
+
+    // Persist the enquiry to the booking dashboard (best-effort; WhatsApp is the backup channel).
+    void createLead({
+      name: String(data.get("name") || ""),
+      email: String(data.get("email") || ""),
+      service: String(data.get("service") || ""),
+      travel_dates: String(data.get("dates") || ""),
+      children: String(data.get("children") || ""),
+      message: String(data.get("message") || ""),
+      company: String(data.get("company") || ""),
+    });
+
     setSubmitted(true);
   }
 
@@ -133,6 +148,15 @@ export default function Contact() {
                   Fill this out and we&apos;ll open WhatsApp with your details ready to send.
                 </p>
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot — hidden from humans, catches bots. */}
+                  <input
+                    type="text"
+                    name="company"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    className="absolute left-[-9999px] h-0 w-0 opacity-0"
+                  />
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
                       <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-white/70">
