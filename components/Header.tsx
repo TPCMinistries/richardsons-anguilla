@@ -37,11 +37,11 @@ export default function Header() {
           className="group flex items-center gap-2"
         >
           <Image
-            src="/images/logo.png"
-            alt="Richardson's Anguilla Experience"
-            width={400}
-            height={280}
-            className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
+            src="/images/logo-crest.png"
+            alt="Richardson's Anguilla Experience — Learn To Swim Program Anguilla"
+            width={500}
+            height={500}
+            className="h-14 w-auto object-contain transition-transform group-hover:scale-105"
             priority
           />
         </a>
