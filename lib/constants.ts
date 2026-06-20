@@ -214,6 +214,7 @@ export interface Partner {
   name: string;
   type: string;
   logo?: string;
+  hideName?: boolean;
 }
 
 export const PARTNERS: Partner[] = [
@@ -225,6 +226,8 @@ export const PARTNERS: Partner[] = [
   {
     name: "Learn to Swim Anguilla",
     type: "Community Partner",
+    logo: "/images/logo-crest.png",
+    hideName: true,
   },
   {
     name: "Lyme Seeds",

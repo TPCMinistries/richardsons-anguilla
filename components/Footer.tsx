@@ -13,11 +13,11 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="mb-4">
               <Image
-                src="/images/logo-crest.png"
-                alt="Richardson's Anguilla Experience — Learn To Swim Program Anguilla"
-                width={500}
-                height={500}
-                className="h-20 w-auto object-contain"
+                src="/images/logo-light.png"
+                alt="Richardson's Anguilla Experience"
+                width={456}
+                height={320}
+                className="h-16 w-auto object-contain"
               />
             </div>
             <p className="text-sm leading-relaxed text-white/40">

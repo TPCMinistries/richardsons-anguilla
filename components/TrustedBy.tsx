@@ -37,7 +37,9 @@ export default function TrustedBy() {
                   </span>
                 )}
               </div>
-              <p className="text-sm font-semibold text-navy/70">{partner.name}</p>
+              {!partner.hideName && (
+                <p className="text-sm font-semibold text-navy/70">{partner.name}</p>
+              )}
               <p className="text-[11px] text-navy/35">{partner.type}</p>
             </div>
           ))}
