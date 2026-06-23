@@ -95,6 +95,12 @@ export default function Contact() {
                 <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
               </a>
               <p className="mt-4 text-sm text-white/40">{SITE.phoneDisplay}</p>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="mt-1 block break-words text-sm text-white/40 transition-colors hover:text-orange"
+              >
+                {SITE.email}
+              </a>
             </div>
 
             {/* Info cards */}

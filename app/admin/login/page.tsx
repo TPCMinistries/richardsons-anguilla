@@ -34,7 +34,7 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
           <p className="text-sm font-semibold tracking-[0.2em] text-orange uppercase">
-            Richardson&apos;s Anguilla
+            Richardson Anguilla
           </p>
           <h1 className="mt-2 font-[family-name:var(--font-heading)] text-2xl font-bold text-navy">
             Booking Dashboard

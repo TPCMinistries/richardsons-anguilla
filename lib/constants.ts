@@ -1,16 +1,16 @@
-// Richardson's Anguilla Experience — Site Data
+// Richardson Anguilla Experience — Site Data
 
 export const SITE = {
-  name: "Richardson's Anguilla Experience",
+  name: "Richardson Anguilla Experience",
   tagline: "Anguilla's Most Trusted Name in Children's Care",
   subtitle:
     "Private swim lessons, professional childcare, youth sports, school programs, and vacation packages — trusted by luxury resorts and families across the island.",
   url: "https://raexperience.com",
   // Real WhatsApp — primary booking channel. (Replace `calendly` once a real link exists.)
-  whatsapp: "12645810337",
-  phoneDisplay: "+1 (264) 581-0337",
+  whatsapp: "12645818425",
+  phoneDisplay: "+1 (264) 581-8425",
   calendly: "https://calendly.com/richardsons-anguilla",
-  email: "info@raexperience.com",
+  email: "RichardsonAnguillaExperience@gmail.com",
   location: "Anguilla, British West Indies",
 };
 
@@ -43,6 +43,7 @@ export interface Service {
   tagline: string;
   description: string;
   features: string[];
+  pricing?: string[];
   image: string;
 }
 
@@ -50,8 +51,8 @@ export const SERVICES: Service[] = [
   {
     title: "Private Swim Lessons",
     slug: "swimming",
-    price: "From $75",
-    priceNote: "per session",
+    price: "From $50",
+    priceNote: "per hour",
     tagline: "Water Safety Meets Caribbean Fun",
     description:
       "Your child will learn to swim in some of the most beautiful water on earth — guided by a StarGuard Elite certified instructor who has literally saved lives. From first splashes to confident open-water strokes, every lesson is built around safety, technique, and genuine joy.",
@@ -61,12 +62,17 @@ export const SERVICES: Service[] = [
       "StarGuard Elite & lifeguard certified",
       "Beach, resort pool, or your private villa",
     ],
+    pricing: [
+      "Ages 3–5 — $50/hour",
+      "Ages 6–18 — $75/hour",
+      "+$25/hour each additional child",
+    ],
     image: "/images/swim-action.png",
   },
   {
     title: "Professional Childcare",
     slug: "childcare",
-    price: "From $50",
+    price: "$50",
     priceNote: "per hour",
     tagline: "Your Vacation, Their Adventure",
     description:
@@ -77,13 +83,17 @@ export const SERVICES: Service[] = [
       "Engaging activities — not just screen time",
       "Trusted by returning families year after year",
     ],
+    pricing: [
+      "$50/hour",
+      "+$25/hour each additional child",
+    ],
     image: "/images/childcare.jpg",
   },
   {
     title: "Youth Sports & Fitness",
     slug: "sports",
-    price: "From $75",
-    priceNote: "per session",
+    price: "$75",
+    priceNote: "per hour",
     tagline: "Building Athletes, Building Character",
     description:
       "More than drills — this is mentorship through sport. Deanna's coaching develops footwork, agility, and game sense while instilling discipline, teamwork, and the confidence that comes from earning every improvement. Perfect for vacation kids who want to stay active.",
@@ -92,6 +102,10 @@ export const SERVICES: Service[] = [
       "Ages 5–16, all skill levels",
       "Individual & small group training",
       "Flexible scheduling for visiting families",
+    ],
+    pricing: [
+      "$75/hour",
+      "+$15/hour each additional child",
     ],
     image: "/images/sports.jpg",
   },
@@ -179,10 +193,10 @@ export const TESTIMONIALS: Testimonial[] = [
 export const CREDENTIALS = [
   {
     label: "CPR & First Aid Certified",
-    detail: "Current certification, renewed annually",
+    detail: "Current certification",
   },
   {
-    label: "StarGuard Elite Lifeguard",
+    label: "StarGuard Elite Lifeguard (2023)",
     detail: "Highest standard in aquatic safety",
   },
   {
@@ -207,7 +221,7 @@ export const TRUST_STATS = [
   { value: "500+", label: "Children Taught" },
   { value: "8+", label: "Years Experience" },
   { value: "1", label: "Life Saved" },
-  { value: "100%", label: "Safety Record" },
+  { value: "Excellent", label: "Safety Record" },
 ];
 
 export interface Partner {
@@ -300,7 +314,7 @@ export const FAQS: FAQ[] = [
   {
     question: "How do I pay, and what does it cost?",
     answer:
-      "Swim lessons and youth coaching start at $75 per session, childcare from $50 per hour, and multi-day vacation packages from $250. Final pricing depends on group size, duration, and location — message Deanna for a quick, no-obligation quote.",
+      "Swim lessons start at $50 per hour (ages 3–5) and $75 per hour (ages 6–18), youth coaching is $75 per hour, and childcare is $50 per hour — each with a small per-additional-child rate. Multi-day vacation packages start at $250. Message Deanna for a quick, no-obligation quote.",
   },
   {
     question: "What if our plans change or the weather turns?",

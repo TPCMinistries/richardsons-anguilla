@@ -58,7 +58,7 @@ export default function Hero() {
         <motion.div variants={fadeUp} className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm">
           <ShieldCheck className="h-4 w-4 text-orange" />
           <span className="text-sm font-medium text-white/80">
-            Learn to Swim Anguilla Partner &middot; StarGuard Elite Certified
+            Learn to Swim Anguilla Partner &middot; Red Cross Certified
           </span>
         </motion.div>
 

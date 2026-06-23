@@ -8,7 +8,7 @@ import { fadeUp, slideInLeft, slideInRight, staggerContainer } from "@/lib/anima
 
 const ICONS: Record<string, React.ReactNode> = {
   "CPR & First Aid Certified": <ShieldCheck className="h-5 w-5 text-orange" />,
-  "StarGuard Elite Lifeguard": <Award className="h-5 w-5 text-orange" />,
+  "StarGuard Elite Lifeguard (2023)": <Award className="h-5 w-5 text-orange" />,
   "Certified Swim Instructor": <CheckCircle className="h-5 w-5 text-orange" />,
   "Youth Coaching Certified": <Award className="h-5 w-5 text-orange" />,
   "WSI Certified Instructor": <Award className="h-5 w-5 text-orange" />,
@@ -31,7 +31,7 @@ export default function About() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-cream shadow-premium">
               <Image
                 src="/images/deanna.png"
-                alt="Deanna Richardson — Founder, Richardson's Anguilla Experience"
+                alt="Deanna Richardson — Founder, Richardson Anguilla Experience"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -68,14 +68,14 @@ export default function About() {
                 <strong className="text-navy/80">Learn to Swim Anguilla</strong> for
                 island-wide water safety — and with experience delivering swim lessons and
                 kids&apos; club programming at resorts including{" "}
-                <strong className="text-navy/80">Zemi Beach House</strong> — Deanna has
+                <strong className="text-navy/80">Manoah Boutique Hotel</strong> — Deanna has
                 spent over eight years building the kind of reputation that luxury
                 hospitality demands: impeccable credentials, warm professionalism, and the
                 rare ability to make every child feel safe, capable, and genuinely cared
                 for.
               </p>
               <p>
-                She launched Richardson&apos;s Anguilla Experience because demand outgrew
+                She launched Richardson Anguilla Experience because demand outgrew
                 any single resort. Today, she serves families directly, partners with
                 hotels and villa companies, and leads community water safety programs — all
                 with the same standard of care that made her Anguilla&apos;s most

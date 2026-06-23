@@ -112,6 +112,22 @@ function ServiceCard({ service }: { service: (typeof SERVICES)[number] }) {
           {service.description}
         </p>
 
+        {/* Pricing */}
+        {service.pricing && (
+          <div className="mb-6 rounded-2xl bg-cream px-5 py-4">
+            <p className="mb-2 text-xs font-semibold tracking-[0.15em] text-orange uppercase">
+              Pricing
+            </p>
+            <ul className="space-y-1.5">
+              {service.pricing.map((line) => (
+                <li key={line} className="flex items-center justify-between gap-3 text-sm font-medium text-navy/75">
+                  {line}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {/* Feature list */}
         <ul className="mb-8 space-y-2.5">
           {service.features.map((feature) => (

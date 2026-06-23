@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
     default:
-      "Richardson's Anguilla Experience | Swim Lessons, Childcare & Youth Coaching",
-    template: "%s | Richardson's Anguilla Experience",
+      "Richardson Anguilla Experience | Swim Lessons, Childcare & Youth Coaching",
+    template: "%s | Richardson Anguilla Experience",
   },
   description:
     "Safe, certified, and trusted children's services in Anguilla. Private swim lessons, professional childcare, and youth coaching for visiting families and luxury resorts — led by StarGuard Elite certified instructor Deanna Richardson.",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Richardson's Anguilla Experience",
+    title: "Richardson Anguilla Experience",
     description:
       "Private swim lessons, professional childcare, and youth coaching in Anguilla — delivered with care, certification, and luxury-resort trust.",
     url: SITE.url,
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
         url: "/images/hero-bg.jpg",
         width: 1200,
         height: 630,
-        alt: "Richardson's Anguilla Experience — children's services in Anguilla",
+        alt: "Richardson Anguilla Experience — children's services in Anguilla",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Richardson's Anguilla Experience",
+    title: "Richardson Anguilla Experience",
     description:
       "Swim lessons, childcare, and youth coaching delivered with care, safety, and experience in Anguilla.",
     images: ["/images/hero-bg.jpg"],
@@ -88,6 +88,7 @@ const jsonLd = {
         "Private swim lessons, professional childcare, youth coaching, and water-safety programs in Anguilla for visiting families and luxury resorts.",
       url: SITE.url,
       telephone: SITE.phoneDisplay,
+      email: SITE.email,
       image: `${SITE.url}/images/hero-bg.jpg`,
       areaServed: { "@type": "Place", name: "Anguilla, British West Indies" },
       address: {

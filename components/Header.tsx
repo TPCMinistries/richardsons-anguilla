@@ -38,7 +38,7 @@ export default function Header() {
         >
           <Image
             src="/images/logo-light.png"
-            alt="Richardson's Anguilla Experience"
+            alt="Richardson Anguilla Experience"
             width={456}
             height={320}
             className="h-12 w-auto object-contain transition-transform group-hover:scale-105"

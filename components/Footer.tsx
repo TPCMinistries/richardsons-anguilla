@@ -14,7 +14,7 @@ export default function Footer() {
             <div className="mb-4">
               <Image
                 src="/images/logo-light.png"
-                alt="Richardson's Anguilla Experience"
+                alt="Richardson Anguilla Experience"
                 width={456}
                 height={320}
                 className="h-16 w-auto object-contain"
@@ -79,6 +79,12 @@ export default function Footer() {
                 Message on WhatsApp
               </a>
               <p className="text-white/40">{SITE.phoneDisplay}</p>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="block break-words text-white/40 transition-colors hover:text-orange"
+              >
+                {SITE.email}
+              </a>
             </div>
           </div>
         </div>
